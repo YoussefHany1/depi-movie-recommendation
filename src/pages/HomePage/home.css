@@ -1,0 +1,38 @@
+svg{
+    width: 4rem;
+    height: 4rem;
+}
+#root > section, #root > header {
+    padding: 0 10%;
+}
+.splide__arrow{
+    background-color: transparent;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2cap;
+    & svg{
+        fill: var(--primary);
+        width: 4rem;
+        height: 4rem;
+    }
+}
+section .splide__track{
+    width: 71% ! important;
+    margin: auto;
+    padding: 1rem 0;
+}
+section .splide__arrow svg{
+    width: 3rem;
+    height: 3rem;
+}
+.btn-outline-danger {
+    --bs-btn-color: var(--primary) ! important;
+    --bs-btn-border-color: var(--primary) ! important;
+    --bs-btn-hover-bg: var(--primary) ! important;
+    --bs-btn-hover-border-color: var(--primary) ! important;
+    --bs-btn-active-bg: var(--primary) ! important;
+    --bs-btn-active-border-color: var(--primary) ! important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) ! important;
+    --bs-btn-disabled-color: var(--primary) ! important;
+    --bs-btn-disabled-border-color: var(--primary) ! important;
+}
