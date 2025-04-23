@@ -1,0 +1,18 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary: #E50000;
+  --background: #141414;
+  --background2: #1A1A1A;
+  --text: #999999;
+  --heading: #FFFFFF;
+  --border: #262626;
+}
+#root {
+  background-color: var(--background);
+}
