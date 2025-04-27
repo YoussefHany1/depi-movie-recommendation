@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Link } from 'react-router-dom';
 import styles from './header.module.css'
 const Header = () => {
   const [movies, setMovies] = useState([]);
@@ -35,9 +36,9 @@ const Header = () => {
   if (loading) return <p>Loading...</p>;
   // console.log(movies);
   return (
-    <header className="pt-sm-3 pt-5">
+    <header className="pt-sm-3 ">
       {error && <p>there is an error, try again later</p>}
-      <Splide options={{ rewind: true, type: 'loop', perPage: 1, perMove: 1, pagination : false, autoplay: true}} className="header py-5 mt-5">
+      <Splide options={{ rewind: true, type: 'loop', perPage: 1, perMove: 1, pagination : false, autoplay: true}} className="mt-4">
             {movies.map((movie) => (
               movie.poster_path &&
               
@@ -46,7 +47,7 @@ const Header = () => {
                   <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="w-100 rounded-4" alt={movie.title} />
 
                   <div className={`text text-center position-absolute z-2 w-100 ${styles.text}`}>
-                    <h2 className="text-white fw-bold">{movie.title}</h2>
+                    <Link to={`/movie/${movie.id}`} className="text-white fs-1 fw-bold text-decoration-none">{movie.title}</Link>
                     <p>{movie.tagline}</p>
                   </div>
               </SplideSlide>

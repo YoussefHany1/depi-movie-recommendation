@@ -6,13 +6,25 @@
   padding: 0;
 }
 :root {
-  --primary: #E50000;
+  --primary: #b50505;
   --background: #141414;
   --background2: #1A1A1A;
   --text: #999999;
   --heading: #FFFFFF;
   --border: #262626;
 }
-#root {
+body {
   background-color: var(--background);
+  padding-top: 105px;
+}
+@media (max-width: 605px) {
+  body {
+    padding-top: 157px; 
+  }
+}
+.btn-danger {
+  --bs-btn-bg: var(--primary) !important;
+  --bs-btn-border-color: var(--primary) !important;
+  --bs-btn-hover-bg: #880000 !important;
+  --bs-btn-hover-border-color: #880000 !important;
 }

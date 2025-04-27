@@ -7,9 +7,6 @@
   height: 300px;
   width: 200px;
 }
-.slide:is(:hover, :focus-visible) {
-  /* --hover: 1; */
-}
 .splide{
   width: 82% ! important;
   margin: auto;

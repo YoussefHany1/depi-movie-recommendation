@@ -17,14 +17,14 @@ function Footer() {
           </ul>
           <ul className="list-unstyled lh-lg px-3">
             <li><a href="#!" className="text-decoration-none text-white">Movies</a></li>
-            <li><a href="#!" className="text-decoration-none">Trending</a></li>
-            <li><a href="#!" className="text-decoration-none">Top Rated</a></li>
-            <li><a href="#!" className="text-decoration-none">Upcoming</a></li>
+            <li><a href="#trending" className="text-decoration-none">Trending</a></li>
+            <li><a href="#top-rated" className="text-decoration-none">Top Rated</a></li>
+            <li><a href="#newReleases" className="text-decoration-none">Upcoming</a></li>
             <li><a href="#!" className="text-decoration-none">Popular</a></li>
           </ul>
           <ul className="list-unstyled lh-lg px-3">
-            <li><a href="#!" className="text-decoration-none text-white">TV Shows</a></li>
-            <li><a href="#!" className="text-decoration-none">Trending</a></li>
+            <li><a href="#tvShows" className="text-decoration-none text-white">TV Shows</a></li>
+            <li><a href="#tvShows" className="text-decoration-none">Trending</a></li>
             <li><a href="#!" className="text-decoration-none">Top Rated</a></li>
             <li><a href="#!" className="text-decoration-none">Upcoming</a></li>
             <li><a href="#!" className=" text-decoration-none">Popular</a></li>
