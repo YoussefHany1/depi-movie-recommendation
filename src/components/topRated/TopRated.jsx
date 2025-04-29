@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import styles from '../slides.module.css'
 function TopRated() {
+  const star = <svg fill="var(--primary)" viewBox="0 0 36 36"><path d="M34 16.78a2.22 2.22 0 0 0-1.29-4l-9-.34a.23.23 0 0 1-.2-.15l-3.11-8.4a2.22 2.22 0 0 0-4.17 0l-3.1 8.43a.23.23 0 0 1-.2.15l-9 .34a2.22 2.22 0 0 0-1.29 4l7.06 5.55a.23.23 0 0 1 .08.24l-2.43 8.61a2.22 2.22 0 0 0 3.38 2.45l7.46-5a.22.22 0 0 1 .25 0l7.46 5a2.2 2.2 0 0 0 2.55 0 2.2 2.2 0 0 0 .83-2.4l-2.45-8.64a.22.22 0 0 1 .08-.24Z" /><path fill="none" d="M0 0h36v36H0z" /></svg>
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const star = <svg fill="var(--primary)" viewBox="0 0 36 36"><path d="M34 16.78a2.22 2.22 0 0 0-1.29-4l-9-.34a.23.23 0 0 1-.2-.15l-3.11-8.4a2.22 2.22 0 0 0-4.17 0l-3.1 8.43a.23.23 0 0 1-.2.15l-9 .34a2.22 2.22 0 0 0-1.29 4l7.06 5.55a.23.23 0 0 1 .08.24l-2.43 8.61a2.22 2.22 0 0 0 3.38 2.45l7.46-5a.22.22 0 0 1 .25 0l7.46 5a2.2 2.2 0 0 0 2.55 0 2.2 2.2 0 0 0 .83-2.4l-2.45-8.64a.22.22 0 0 1 .08-.24Z" /><path fill="none" d="M0 0h36v36H0z" /></svg>
-
   const options = {
     headers: {
         accept: 'application/json',
@@ -17,16 +17,12 @@ function TopRated() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`, options)
-        .then(res => res.json())
-        .then(data => {
-            setMovies(data.results);
-        })
-        // .then(movies => console.log(movies))
+        const response = await axios.get('https://api.themoviedb.org/3/movie/top_rated',{...options,});
+        setMovies(response.data.results);
       } catch (err) {
-        setError(`Error fetching movies: ${err}`);
-        console.error(err.message);
-      }finally {
+        setError(err.message || 'Error while fetching movies');
+        console.error(`Error while fetching movies ${err.message}`);
+      } finally {
         setLoading(false);
       }
     };
@@ -35,13 +31,13 @@ function TopRated() {
   }, []);
   if (loading) return <p className="text-center fs-3 fw-bold">Loading...</p>;
 //   console.log(movies)
-
   return (
     <>
       <section className="pt-4" id="top-rated">
         <h3 className="header fs-1 fw-bold">Top Rated</h3>
         <div className="cards d-flex">
         {error && <p className="fs-3 fw-bold m-auto">there is an error, try again later</p>}
+          {movies.length > 0 &&    
             <Splide options={{ type: 'loop', pagination : false, gap: '3rem' }} className="py-5 overflow-hidden">
                 {movies.map((movie) => (
                     movie.poster_path &&
@@ -53,6 +49,7 @@ function TopRated() {
                     </SplideSlide>
                 ))}
             </Splide>
+          }
         </div>
       </section>
     </>

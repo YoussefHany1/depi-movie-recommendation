@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import axios from 'axios';
 import styles from '../slides.module.css'
 import { Link } from 'react-router-dom';
 function NewReleases() {
@@ -7,31 +8,24 @@ function NewReleases() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const options = {
     headers: {
         accept: 'application/json',
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNTJkZjA2MTJkMDYxNWZiMmY1Mjk5NGNiOTY3OTkyNyIsIm5iZiI6MTc0MDMxOTA3NC43MjYsInN1YiI6IjY3YmIyOTYyYWJlZWRlMzZjNDQ2NzMzNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PQXzYlftzN88HHdsDs528EOijg92mdpxxRTfgxS7hzI'
     }
   };
-
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        await fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, options)
-        .then(res => res.json())
-        .then(data => {
-            setMovies(data.results);
-        })
-        // .then(movies => console.log(movies))
+        const response = await axios.get('https://api.themoviedb.org/3/movie/upcoming',{...options,});
+        setMovies(response.data.results);
       } catch (err) {
-        setError('Error fetching movies:', err);
-        console.error(error);
-      }finally {
+        setError(err.message || 'Error while fetching movies');
+        console.error(`Error while fetching movies ${err.message}`);
+      } finally {
         setLoading(false);
       }
     };
-
     fetchMovies();
   }, []);
   // console.log(movies)
@@ -42,6 +36,7 @@ function NewReleases() {
         <h3 className="header fs-1 fw-bold">New Releases</h3>
         <div className="cards d-flex">
         {error && <p className="fs-3 fw-bold m-auto">there is an error, try again later</p>}
+          {movies.length > 0 &&    
             <Splide options={{ type: 'loop', pagination : false, gap: '3rem' }} className="py-5 overflow-hidden">
                 {movies.map((movie) => (
                     movie.poster_path &&
@@ -53,10 +48,10 @@ function NewReleases() {
                     </SplideSlide>
                 ))}
             </Splide>
+          }
         </div>
       </section>
     </>
   )
 }
-
 export default NewReleases
