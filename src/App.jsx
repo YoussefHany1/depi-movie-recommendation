@@ -14,7 +14,7 @@ function App() {
       <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/depi-movie-recommendation" element={<Home />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/movie/:id" element={<MovieDetailsPage/>} />
 
