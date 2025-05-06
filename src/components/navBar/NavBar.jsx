@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styles from './navBar.module.css'
+import { FaUser } from 'react-icons/fa';
 function NavBar() {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
@@ -14,26 +15,34 @@ function NavBar() {
 
   return (
     <>
-      <nav className={`navbar fixed-top ${styles.navbar} py-4`}>
-        <div className="container-fluid justify-content-around gap-2 flex-column flex-sm-row">
-          <div>
-            <Link to='/' className={`text-decoration-none fw-bold  ${styles.brand}`}>Movie App</Link>
-          </div>
-          <form className="d-flex" role="search" onSubmit={handleSearch}>
-            <input
-             className={`input form-control w-100 me-3 fs-5 ${styles.input}`} 
-             type="search" 
-             placeholder="Search Movies" 
-             aria-label="Search"
-             value={query}
-             onChange={(e) => setQuery(e.target.value)} 
-            />
-            <button className="btn btn-danger btn-sm fs-5 fw-semibold px-3" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+     <nav className={`navbar fixed-top  ${styles.navbar} py-3`}>
+  <div className="container-fluid d-flex justify-content-around  flex-wrap gap-3">
+    
+    <Link to="/" className={`text-decoration-none fw-bold ${styles.brand}`}>
+      Movie App
+    </Link>
+
+    <div className="d-flex align-items-center gap-2">
+      <form className="d-flex align-items-center" onSubmit={handleSearch}>
+        <input
+          className={`form-control me-2 ${styles.input}`}
+          type="search"
+          placeholder="Search Movies"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button className="btn btn-danger btn-sm fw-semibold" type="submit">
+          Search
+        </button>
+      </form>
+      <Link to="/login" className={`  ${styles.loginBtn} ms-5`}>
+    <FaUser className={styles.userIcon} />
+      </Link>
+    </div>
+  </div>
+</nav>
     </>
   );
 }
 
-export default NavBar
+export default NavBar;

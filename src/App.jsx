@@ -4,7 +4,7 @@ import Footer from './components/footer/Footer.jsx';
 import Home from './pages/homePage/Home.jsx';
 import SearchPage from './pages/searchpage/SearchPage.jsx';
 import MovieDetailsPage from './pages/details/details.jsx';
-
+import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './App.css'
@@ -14,10 +14,10 @@ function App() {
       <Router>
       <NavBar />
       <Routes>
-        <Route path="/depi-movie-recommendation" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/movie/:id" element={<MovieDetailsPage/>} />
-
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
       </Router>

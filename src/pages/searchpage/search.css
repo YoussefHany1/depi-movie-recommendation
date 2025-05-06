@@ -38,13 +38,13 @@
   #search-page label {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #343a40; /* لون رمادي غامق */
+    color: #343a40; 
     margin-right: 0.5rem;
     display: inline-block;
   }
   #search-page h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #dc3545; /* أحمر لامع */
+    color: #dc3545; 
     margin-bottom: 1.5rem;
   }
