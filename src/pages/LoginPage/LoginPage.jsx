@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './LoginPage.css';
 
 function LoginPage() {
@@ -57,6 +58,7 @@ function LoginPage() {
           Forgot password?
         </p>
         <button type="submit">Login</button>
+        <p className="signup-link">Don't have an account? <Link to="/signup">Sign up</Link></p>
       </form>
     </div>
   );

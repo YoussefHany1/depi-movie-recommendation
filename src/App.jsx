@@ -5,6 +5,7 @@ import Home from './pages/homePage/Home.jsx';
 import SearchPage from './pages/searchpage/SearchPage.jsx';
 import MovieDetailsPage from './pages/details/details.jsx';
 import LoginPage from './pages/LoginPage/LoginPage.jsx';
+import SignUpPage from './pages/SignUpPage/SignUpPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './App.css'
@@ -18,6 +19,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/movie/:id" element={<MovieDetailsPage/>} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
       </Routes>
       <Footer />
       </Router>
