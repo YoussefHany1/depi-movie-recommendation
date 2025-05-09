@@ -13,18 +13,18 @@
   --heading: #FFFFFF;
   --border: #262626;
 }
-body {
-  background-color: var(--background);
-  padding-top: 105px;
-}
-@media (max-width: 605px) {
-  body {
-    padding-top: 157px; 
-  }
-}
 .btn-danger {
   --bs-btn-bg: var(--primary) !important;
   --bs-btn-border-color: var(--primary) !important;
   --bs-btn-hover-bg: #880000 !important;
   --bs-btn-hover-border-color: #880000 !important;
+}
+body {
+  background-color: var(--background);
+  padding-top: 105px;
+}
+@media (max-width: 588px) {
+  body {
+    padding-top: 157px; 
+  }
 }

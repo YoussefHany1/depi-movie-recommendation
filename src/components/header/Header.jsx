@@ -1,39 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { useSelector, useDispatch } from "react-redux";
+import { fetchHeader } from "../../redux/headerSlice";
 import styles from './header.module.css'
 const Header = () => {
-  const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const options = {
-    headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNTJkZjA2MTJkMDYxNWZiMmY1Mjk5NGNiOTY3OTkyNyIsIm5iZiI6MTc0MDMxOTA3NC43MjYsInN1YiI6IjY3YmIyOTYyYWJlZWRlMzZjNDQ2NzMzNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PQXzYlftzN88HHdsDs528EOijg92mdpxxRTfgxS7hzI'
-    }
-  };
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await axios.get('https://api.themoviedb.org/3/movie/now_playing',{...options,});
-        setMovies(response.data.results);
-      } catch (err) {
-        setError(err.message || 'Error while fetching movies');
-        console.error(`Error while fetching movies ${err.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const dispatch = useDispatch();
+  const { movies, loading, error } = useSelector((state) => state.header);
 
-    fetchMovies();
-  }, []);
-  if (loading) return <p>Loading...</p>;
-  // console.log(movies);
+  useEffect(() => {
+    dispatch(fetchHeader());
+  }, [dispatch]);
+  
   return (
     <header className="pt-sm-3 ">
-      {error && <p>there is an error, try again later</p>}
-      <Splide options={{ rewind: true, type: 'loop', pagination : false, autoplay: true}} className="mt-4">
+      {error && <p className="text-center fs-3 fw-bold">there is an error, try again later</p>}
+      {loading && <p className="text-center fs-3 fw-bold">Loading...</p>}
+      {movies.length > 0 && 
+        <Splide options={{ rewind: true, type: 'loop', pagination : false, autoplay: true}} className="mt-4">
             {movies.length > 0 &&
             movies.map((movie) => (
               movie.backdrop_path &&
@@ -46,9 +30,8 @@ const Header = () => {
                   </div>
               </SplideSlide>
             ))}
-      </Splide>
+      </Splide>}
     </header>
   );
 };
-
 export default Header;

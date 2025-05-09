@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import styles from './navBar.module.css'
 import { FaUser } from 'react-icons/fa';
+import styles from './navBar.module.css'
 function NavBar() {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ function NavBar() {
      <nav className={`navbar fixed-top  ${styles.navbar} py-3`}>
   <div className="container-fluid d-flex justify-content-around  flex-wrap gap-3">
     
-    <Link to="/" className={`text-decoration-none fw-bold ${styles.brand}`}>
+    <Link to="/" className={`text-decoration-none fw-bold fs-1 ${styles.logo}`}>
       Movie App
     </Link>
 
@@ -31,7 +31,7 @@ function NavBar() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="btn btn-danger btn-sm fw-semibold" type="submit">
+        <button className="btn btn-danger fw-semibold" type="submit">
           Search
         </button>
       </form>

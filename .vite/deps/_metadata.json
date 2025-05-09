@@ -1,0 +1,79 @@
+{
+  "hash": "a87d10bc",
+  "configHash": "cbbb7351",
+  "lockfileHash": "310d74ad",
+  "browserHash": "5a259f8b",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "cdaf8f42",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "9cf79a08",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "8fae51af",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/react-redux/dist/react-redux.mjs",
+      "file": "react-redux.js",
+      "fileHash": "980ad5da",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "d733208c",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "5e130d22",
+      "needsInterop": false
+    },
+    "bootstrap/dist/js/bootstrap.min.js": {
+      "src": "../../node_modules/bootstrap/dist/js/bootstrap.min.js",
+      "file": "bootstrap_dist_js_bootstrap__min__js.js",
+      "fileHash": "c3d8879a",
+      "needsInterop": true
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "5c94f3d8",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "87702d78",
+      "needsInterop": false
+    },
+    "@splidejs/react-splide": {
+      "src": "../../node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js",
+      "file": "@splidejs_react-splide.js",
+      "fileHash": "8e85c044",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-CJK34UIW": {
+      "file": "chunk-CJK34UIW.js"
+    },
+    "chunk-W24JOBID": {
+      "file": "chunk-W24JOBID.js"
+    },
+    "chunk-EWTE5DHJ": {
+      "file": "chunk-EWTE5DHJ.js"
+    }
+  }
+}
