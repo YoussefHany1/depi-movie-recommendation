@@ -92,7 +92,7 @@ const MovieDetails = () => {
           <h3>Watch Trailer</h3>
           <div className="ratio ratio-16x9">
             <iframe
-              src={`ttps://www.youtube.com/embed/${trailer.key}`}
+              src={`https://www.youtube.com/embed/${trailer.key}`}
               title="Trailer"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
