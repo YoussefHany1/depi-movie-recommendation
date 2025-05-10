@@ -35,6 +35,9 @@ function NavBar() {
           Search
         </button>
       </form>
+      <Link to="/contact" className="btn btn-outline-light fw-semibold ms-3">
+    Contact Us
+  </Link>
       <Link to="/login" className={`  ${styles.loginBtn} ms-5`}>
     <FaUser className={styles.userIcon} />
       </Link>
