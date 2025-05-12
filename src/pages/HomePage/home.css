@@ -1,11 +1,4 @@
-svg{
-    width: 4rem;
-    height: 4rem;
-}
-#root > section, #root > header {
-    padding: 0 10%;
-}
-.splide__arrow{
+section .splide__arrow{
     background-color: transparent;
     width: 4rem;
     height: 4rem;

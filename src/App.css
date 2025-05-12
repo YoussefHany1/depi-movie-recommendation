@@ -19,12 +19,15 @@
   --bs-btn-hover-bg: #880000 !important;
   --bs-btn-hover-border-color: #880000 !important;
 }
+#root > section, #root > header {
+  padding: 0 10%;
+}
 body {
   background-color: var(--background);
-  padding-top: 105px;
+  padding-top: 95px;
 }
-@media (max-width: 588px) {
+@media (max-width: 599px) {
   body {
-    padding-top: 157px; 
+    padding-top: 125px; 
   }
 }

@@ -16,7 +16,7 @@ function Footer() {
             <li><a href="#!" className="text-decoration-none">FAQ</a></li>
           </ul>
           <ul className="list-unstyled lh-lg px-3">
-            <li><a href="#!" className="text-decoration-none text-white">Movies</a></li>
+            <li><a href="movies" className="text-decoration-none text-white">Movies</a></li>
             <li><a href="#trending" className="text-decoration-none">Trending</a></li>
             <li><a href="#top-rated" className="text-decoration-none">Top Rated</a></li>
             <li><a href="#newReleases" className="text-decoration-none">Upcoming</a></li>
@@ -31,7 +31,7 @@ function Footer() {
           </ul>
           <ul className="list-unstyled lh-lg px-3">
             <li><a href="#!" className="text-decoration-none text-white">Support</a></li>
-            <li><a href="#!" className="text-decoration-none">Contact Us</a></li>
+            <li><a href="contact" className="text-decoration-none">Contact Us</a></li>
           </ul>
           <div>
             <h5 className="text-white mb-3">Connect with us</h5>

@@ -4,7 +4,7 @@ import topRatedReducer from './topRatedSlice';
 import newReleasesReducer from './newReleasesSlice';
 import tvShowsReducer from './tvShowsSlice';
 import headerReducer from './headerSlice';
-
+import moviesReducer from './moviesSlice';
 const store = configureStore({
   reducer: {
     header: headerReducer,
@@ -12,6 +12,7 @@ const store = configureStore({
     topRated: topRatedReducer,
     newReleases: newReleasesReducer,
     tvShows: tvShowsReducer,
+    movies: moviesReducer,
   },
 });
 export default store;

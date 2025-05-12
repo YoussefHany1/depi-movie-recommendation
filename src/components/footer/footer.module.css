@@ -1,4 +1,6 @@
 .social svg{
+    width: 5rem;
+    height: 5rem;
     font-size: 3rem;
     background-color: var(--background2);
     border: var(--border) solid 2px;
@@ -8,13 +10,13 @@
         fill: var(--primary);
     }
 }
-a, p{
-    color: var(--text) !important;
-}
 .container ul li a{
+    color: var(--text) !important;
     transition-duration: 0.2s;
     &:hover{
         color: var(--primary) ! important;
     }
 }
-
+.copyright p, .copyright p a{
+    color: var(--text) !important;
+}

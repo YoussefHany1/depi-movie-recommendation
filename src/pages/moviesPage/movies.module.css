@@ -1,0 +1,19 @@
+.content{
+    background-color: var(--background2);
+    border: 1px solid var(--border);
+    transition-duration: 0.2s;
+    &:hover{
+        border: 1px solid var(--primary);
+    }
+}
+.content svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+.rate{
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: fit-content;
+}

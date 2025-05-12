@@ -1,18 +1,12 @@
 .slide{
     min-width: 13rem;
-    transition-duration: 0.3s;
     & img{
-        object-fit: cover;
         max-height: 650px;
     }
 }
 .background {
-    position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 100%;
     background: linear-gradient(transparent, var(--background));
-    z-index: 1;
 }
 .text{
     bottom: 50px;

@@ -24,7 +24,6 @@ h3{
 }
 .content svg{
   width: 1.5rem;
-  height: 1.5rem;
   margin-right: 0.5rem;
 }
 .content .rate{
@@ -33,4 +32,13 @@ h3{
   color: var(--text);
   width: fit-content;
 }
-
+.view{
+  color: white ! important;
+  transition-duration: 0.3s;
+  &:hover{
+  color: var(--primary) ! important;
+  }
+  & svg{
+    width: 1.5rem;
+  }
+}
